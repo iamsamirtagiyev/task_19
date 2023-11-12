@@ -1,0 +1,10 @@
+@mixin flex($align: flex-start, $justify: flex-start){
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin grid($grid){
+    display: grid;
+    grid-template-columns: repeat($grid, 1fr);
+}

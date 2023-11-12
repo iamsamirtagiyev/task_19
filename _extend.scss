@@ -1,0 +1,74 @@
+.button {
+    z-index: 1;
+    position: relative;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-white;
+    background: $primary-color;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: $transition;
+    overflow: hidden;
+
+    &::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-110%, -50%);
+        width: 50%;
+        height: 100%;
+        background: #000;
+        transition: $transition;
+    }
+
+    &::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(110%, -50%);
+        width: 50%;
+        height: 100%;
+        background: #000;
+        transition: $transition;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+
+    &:hover::after {
+        transform: translate(0, -50%);
+    }
+
+    &:hover::before {
+        transform: translate(0, -50%);
+    }
+}
+
+.dropdown {
+    .dropdown-menu {
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+        position: absolute;
+        width: 170px;
+        padding: 10px 15px;
+        list-style: none;
+        left: 0;
+        top: 50px;
+        pointer-events: none;
+        opacity: 0;
+        transition: $transition;
+    }
+
+    &:hover .dropdown-menu {
+        opacity: 1;
+        pointer-events: all
+    }
+}
